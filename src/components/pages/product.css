@@ -37,6 +37,7 @@
 .product > button{
     background: #f0c14b;
     border: 1px solid;
+    cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 600;

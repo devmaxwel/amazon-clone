@@ -45,7 +45,7 @@ const Home = () => {
             id="1256689"
             title="Samsung LC49RG90SSUXEN 49'- Super Ultra Wide Dual WQHD 5120 x 1440"
             image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
-            price={35.75}
+            price={105.75}
             rating={5}
           />
         </div>
@@ -53,7 +53,7 @@ const Home = () => {
           <Product
             id="12345689"
             title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-            price={20.0}
+            price={2000.0}
             rating={3}
             image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
           />

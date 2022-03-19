@@ -5,7 +5,8 @@ import { useStateValue } from '../context/StateProvider';
 
 const Product = ({title,image,price,rating,id}) => {
   const [{basket},dispatch ] = useStateValue();
-  console.log(basket)
+  
+  localStorage.setItem('basket',JSON.stringify(basket))
   
   const addToCart=()=> {
         dispatch({
