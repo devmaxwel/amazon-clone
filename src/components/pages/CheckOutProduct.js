@@ -1,6 +1,6 @@
 import React from 'react'
 import './checkoutproduct.css'
-import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
+import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded"; 
 import { useStateValue } from '../context/StateProvider';
 
 const CheckOutProduct = ({id,img, title,price,rating}) => {

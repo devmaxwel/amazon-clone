@@ -4,11 +4,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./context/StateProvider";
+import { signOut } from "firebase/auth";
+import { authentication } from "./config/firebaseConfig";
+
 
 const Header = () => {
+  const [{ basket, user }] = useStateValue();
 
-   const [{basket}] = useStateValue();
-
+  const handleLogOut = () => {
+    signOut(authentication);
+    window.location.reload();
+  };
 
   return (
     <div className="header">
@@ -24,10 +30,39 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLine1">Hello Guest</span>
-          <span className="header__optionLine2">Sign In</span>
-        </div>
+        {user ? (
+          <div className="header__option">
+            {user && (
+              <span className="header__optionLine1">Hello {user.email}</span>
+            )}
+            <span className="header__optionLine2">
+              <button
+                style={{
+                  background: "#f0c14b",
+                  border: "1px solid",
+                  borderRadius: "5px",
+                  marginTop: " 10px",
+                  height:"30px",
+                  width:"90px",
+                  cursor:"pointer"
+                }}
+                onClick={handleLogOut}
+              >
+                Sign Out
+              </button>
+            </span>
+          </div>
+        ) : (
+          <Link to="/signin">
+            <div className="header__option">
+              <span className="header__optionLine1">
+                Hello {user ? user.email : "Guest"}
+              </span>
+
+              <span className="header__optionLine2">Sign In</span>
+            </div>
+          </Link>
+        )}
         <div className="header__option">
           <span className="header__optionLine1">Returns</span>
           <span className="header__optionLine2">& Orders</span>
@@ -38,10 +73,14 @@ const Header = () => {
         </div>
 
         <div className="header__optionBasket">
-          <Link to="/checkout" style={{ color: "#fff",
-          textDecoration:"none" }}>
+          <Link
+            to="/checkout"
+            style={{ color: "#fff", textDecoration: "none" }}
+          >
             <ShoppingBasketIcon />
-            <span className="header_optionLine2 header__basketCount">{basket.length}</span>
+            <span className="header_optionLine2 header__basketCount">
+              {basket.length}
+            </span>
           </Link>
         </div>
       </div>
