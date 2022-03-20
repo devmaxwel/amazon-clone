@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { authentication } from './components/config/firebaseConfig';
 import { useStateValue } from './components/context/StateProvider';
+import PasswordReset from './components/pages/PasswordReset';
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/checkout" element={<CheckOut />} />
           {/* <Route path='/card/checkout' element={<CheckOut />} /> */}
-          <Route path="/signin" element={<SignIn/>} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/password/reset" element={<PasswordReset />} />
         </Routes>
       </Router>
     </div>
