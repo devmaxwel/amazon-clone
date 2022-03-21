@@ -26,7 +26,6 @@ const PasswordReset = () => {
             }
         }
 
-
   return (
     <div className="login">
       <Link to="/">

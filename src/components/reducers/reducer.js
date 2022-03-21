@@ -23,6 +23,12 @@ export const reducer = (state , action) => {
             basket:state.basket.filter((b)=> b.id !== action.payload)
         }
 
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket:[]
+      }
+
     case "SET_USER":
         return{
            ...state,

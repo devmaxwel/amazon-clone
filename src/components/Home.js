@@ -58,6 +58,29 @@ const Home = () => {
             image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
           />
         </div>
+        <div className="home__row">
+          <Product
+            id="186780909"
+            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+            image="https://www.kindpng.com/picc/m/115-1156744_mavic-camera-drone-transparent-background-drone-png-png.png"
+            price={17.15}
+            rating={4}
+          />
+          <Product
+            id="124585889"
+            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+            price={20.0}
+            rating={3}
+            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+          />
+          <Product
+            id="12545889"
+            title="Samsung LC49RG90SSUXEN 49'- Super Ultra Wide Dual WQHD 5120 x 1440"
+            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+            price={105.75}
+            rating={5}
+          />
+        </div>
       </div>
     </div>
   );

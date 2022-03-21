@@ -16,7 +16,7 @@ const CheckOut = () => {
           alt=""
         />
         <div>
-          <h2 className="checkout__title">Your Shopping Basket</h2>
+          <h2 className="checkout__title">{basket.length > 0?"Your Shopping Basket":"Your Shopping Basket is Lonely"}</h2>
           {basket.map((b) => {
             return (
               <CheckOutProduct

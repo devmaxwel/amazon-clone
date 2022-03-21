@@ -3,11 +3,12 @@ import './subtotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from '../context/StateProvider'
 import { getBasketTotal } from '../reducers/reducer'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Subtotal = () => {
 
-  const [{basket}]  = useStateValue();
+  const [{basket, user}]  = useStateValue();
+  const history = useNavigate();
 
   return (
     <div className="subtotal">
@@ -30,12 +31,13 @@ const Subtotal = () => {
         displayType={"text"}
         prefix={"£"}
       />
-      <button>
-        <Link style={{
-          color:"#000",
-          textDecoration:"none"
-        }} to='/card/checkout'> Proceed To CheckOut </Link>
-      </button>
+      {user ? (
+        <button onClick={() => history("/card/checkout")}>
+          Proceed to Checkout
+        </button>
+      ) : (
+        <button onClick={() => history("/signin")}>SignIn to Checkout</button>
+      )}
     </div>
   );
 }
